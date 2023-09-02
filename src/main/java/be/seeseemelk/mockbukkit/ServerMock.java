@@ -727,8 +727,8 @@ public class ServerMock extends Server.Spigot implements Server
 	@Override
 	public @NotNull InventoryMock createInventory(@Nullable InventoryHolder owner, @NotNull InventoryType type, @NotNull Component title)
 	{
-		//TODO Auto-generated method stub
-		throw new UnimplementedOperationException();
+		String legacyStringTitle = LegacyComponentSerializer.legacySection().serialize(title);
+		return createInventory(owner,type,legacyStringTitle);
 	}
 
 	@Override
@@ -747,8 +747,8 @@ public class ServerMock extends Server.Spigot implements Server
 	@Override
 	public @NotNull InventoryMock createInventory(@Nullable InventoryHolder owner, int size, @NotNull Component title) throws IllegalArgumentException
 	{
-		//TODO Auto-generated method stub
-		throw new UnimplementedOperationException();
+		String legacyStringTitle = LegacyComponentSerializer.legacySection().serialize(title);
+		return createInventory(owner,size,legacyStringTitle);
 	}
 
 	@Override
